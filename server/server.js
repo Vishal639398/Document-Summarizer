@@ -3,14 +3,13 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
 const summarizer = require('./summarizer');
-require('dotenv').config()
 const app = express();
 
 app.use(cors());
 app.use(fileUpload());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect("mongodb+srv://vishal988974:mqFYthuIVlYTiG06@cluster0.k0nrjh8.mongodb.net/documents?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
